@@ -3,10 +3,12 @@ import Navigation from '../Navigation/Navigation';
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="flex flex-col p-2 bg-cyan-600 w-screen h-screen">
       <Navigation />
-      <main className='p-6'>
-        <Outlet />
+      <main className="flex w-full flex-1 border border-zinc-900">
+        <div className="flex-1">
+          <Outlet/>
+        </div>
       </main>
     </div>
   )

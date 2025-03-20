@@ -9,7 +9,7 @@ function App() {
     setIsWelcomeModalOpen(_prevState => false);
   }
   return (
-    <div className={`flex justify-center items-center w-screen h-screen bg-blue-500`}>
+    <div className={`flex w-full h-full p-2 bg-blue-500`}>
       {isWelcomeModalOpen && <WelcomeModal handleWelcomeModalClose={handleWelcomeModalClose}></WelcomeModal>}
       <AppRouter />
     </div>
