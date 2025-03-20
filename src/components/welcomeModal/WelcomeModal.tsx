@@ -7,7 +7,7 @@ const WelcomeModal = ({
 }: WelcomeModalProps) => {
   return (
     <dialog open className='fixed p-4 text-center bg-red-300 backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-lg'>
-      <div className='container flex flex-col p-4 bg-white gap-4'>
+      <section className='container flex flex-col p-4 bg-white gap-4'>
         <h2 className="font-bold text-center">Email Sign In</h2>
         <form className="flex flex-col gap-4">
           <label className="sr-only">Email</label>
@@ -23,7 +23,7 @@ const WelcomeModal = ({
           <button type="submit" className="bg-green-300 rounded-lg">Try it out</button>
         </form>
         <button>Need to create an account?</button>
-      </div>  
+      </section>  
       <button onClick={handleWelcomeModalClose}>Close me</button>
     </dialog>
   )
