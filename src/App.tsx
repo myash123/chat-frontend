@@ -1,14 +1,17 @@
-import './input.css';  // Ensure the correct CSS file is imported
+import './input.css';
+import { useState } from 'react';
+import WelcomeModal from './components/welcomeModal/WelcomeModal';
 
 function App() {
+  const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(true)
+  const handleWelcomeModalClose = () => {
+    setIsWelcomeModalOpen(_prevState => false);
+  }
   return (
-    <div className="p-10">
-      <h1 className="text-red-500 text-2xl">Tailwind Test</h1>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded">
-        My Button
-      </button>
+    <div className={`flex justify-center items-center w-screen h-screen bg-blue-500`}>
+      {isWelcomeModalOpen && <WelcomeModal handleWelcomeModalClose={handleWelcomeModalClose}></WelcomeModal>}
     </div>
-  );
+  )
 }
 
 export default App;
