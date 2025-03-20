@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 type WelcomeModalProps = {
   handleWelcomeModalClose: () => void;
 };
@@ -5,8 +7,17 @@ type WelcomeModalProps = {
 const WelcomeModal = ({
   handleWelcomeModalClose
 }: WelcomeModalProps) => {
+
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (modalRef.current) {
+      modalRef.current.showModal();
+    }
+  }, []);
+
   return (
-    <dialog open className='fixed p-4 text-center bg-red-300 backdrop:bg-black/50 backdrop:backdrop-blur-sm rounded-lg'>
+    <dialog ref={modalRef} className='fixed p-4 text-center bg-red-300 backdrop:bg-black/50 backdrop-blur-sm rounded-lg'>
       <section className='container flex flex-col p-4 bg-white gap-4'>
         <h2 className="font-bold text-center">Email Sign In</h2>
         <form className="flex flex-col gap-4">
